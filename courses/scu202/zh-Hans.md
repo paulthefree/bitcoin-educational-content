@@ -965,6 +965,309 @@ ChromeOS 最初也基于 Gentoo，但后来发展为独立体系。
 
 
 
+### 该如何选择 Linux 发行版？
+
+
+
+选择合适的 Linux 发行版，应基于你的实际需求、技术水平以及使用场景。不存在“最好的发行版”，只有“最适合你的发行版”。下面按用途与复杂度，对常见选择进行分类说明。
+
+
+
+#### 通用且易用型发行版
+
+
+
+这类发行版适合日常桌面使用、办公、多媒体和学习环境，强调易安装、良好硬件兼容性和友好的用户体验。
+
+
+
+
+
+- **Ubuntu（Debian 衍生）**  
+  
+  
+  
+  Ubuntu 是目前最流行的桌面 Linux 发行版之一，提供五年长期支持（LTS）版本，拥有庞大的社区、丰富的文档和良好的硬件兼容性。  
+  默认使用 GNOME 桌面环境，并针对普通用户进行了合理的简化和优化。  
+  本课程后续内容将以 Ubuntu 作为主要示例系统。
+
+
+
+  ![Image](assets/fr/020.webp)
+
+
+
+  https://planb.academy/tutorials/computer-security/operating-system/ubuntu-78a3be56-5d51-4ec3-8629-0dd27c352ab5
+
+
+
+- **Linux Mint**  
+
+
+
+  基于 Ubuntu，强调“即装即用”和熟悉的桌面体验。  
+  默认桌面 Cinnamon 接近传统 Windows 风格，适合从 Windows 迁移的用户。
+
+
+  https://planb.academy/tutorials/computer-security/operating-system/linux-mint-da44852e-513f-4004-949a-8fde60c1bca5
+
+  ![Image](assets/fr/021.webp)
+
+
+
+
+
+- **Zorin OS**  
+
+
+
+  面向希望平滑过渡到 Linux 的 Windows / macOS 用户。  
+  提供可切换的界面布局，兼顾现代外观与旧硬件支持。
+
+
+
+  ![Image](assets/fr/022.webp)
+
+
+
+  
+
+- **elementary OS**
+  
+  注重界面美学与一致性，桌面风格接近 macOS。  
+  适合重视设计、偏好简洁操作体验的用户。
+
+https://planb.academy/tutorials/computer-security/operating-system/elementary-os-757a20be-22b5-484c-a032-2bdd909860ac
+
+
+
+![Image](assets/fr/023.webp)
+
+
+
+
+
+- **Pop!_OS**
+
+
+
+  由 System76 开发，面向开发者与桌面用户。  
+  内置对 NVIDIA 显卡的良好支持，并提供面向生产力的窗口管理特性。
+
+
+
+  ![Image](assets/fr/024.webp)
+
+
+
+*资料来源[By Allman - Own work, CC BY-SA 4.0](https://commons.wikimedia.org/w/index.php?curid=114760696).*
+
+
+
+#### 中等复杂度与高性能发行版
+
+
+
+这类发行版适合有一定 Linux 基础、希望获得更高灵活性或更新节奏的用户。
+
+
+
+
+
+- **Fedora（Workstation / KDE）**
+
+
+ 
+  技术前沿，率先采用新标准（Wayland、PipeWire、Flatpak）。  
+  更新频繁，适合开发者和技术用户。
+
+
+
+  ![Image](assets/fr/025.webp)
+
+
+https://planb.academy/tutorials/computer-security/operating-system/fedora-8c17b6ca-5acb-4825-a069-4474375534b0
+
+
+- **openSUSE（Leap / Tumbleweed）**
+
+
+
+  提供稳定版与滚动版选择，集成强大的 YaST 管理工具。  
+  更适合有一定经验的用户。
+
+
+
+![Image](assets/fr/026.webp)
+
+
+
+
+
+- **Debian**
+
+
+
+  以稳定性和严谨著称，软件版本更新较慢但可靠性极高。  
+  适合服务器、工作站以及重视长期稳定的用户。
+
+
+
+  ![Image](assets/fr/027.webp)
+
+
+https://planb.academy/tutorials/computer-security/operating-system/debian-d09a57ec-8372-40ca-bcff-499415209e1f
+
+
+- **Manjaro**
+
+
+  Arch Linux 的友好衍生版，保留滚动更新优势，同时降低配置复杂度。  
+  适合希望体验 Arch 理念但不愿从零配置的用户。
+
+
+
+![Image](assets/fr/028.webp)
+
+
+
+
+
+- **Arch Linux**
+
+
+  
+  极简、滚动发布、完全手动安装。  
+  适合希望深入理解系统并掌控每个组件的高级用户。
+
+
+
+  ![Image](assets/fr/029.webp)
+
+
+
+https://planb.academy/tutorials/computer-security/operating-system/arch-linux-7a3dc8a8-629b-4971-bb0d-4eab94f93973
+
+
+#### 专业、安全与隐私导向发行版
+
+这类发行版针对特定用途设计，不建议作为普通日常桌面系统。
+
+- **Kali Linux**
+  
+  专为安全审计与渗透测试设计，包含大量专业工具。
+
+
+
+  ![Image](assets/fr/030.webp)
+
+
+
+
+
+- **Parrot OS**
+
+
+
+  兼顾安全测试与隐私保护，部分配置可用于轻量日常使用。
+
+
+
+  ![Image](assets/fr/031.webp)
+
+
+
+  
+
+- **Tails**
+
+
+
+  所有流量默认通过 Tor，不保留本地数据，适合高度匿名场景。
+
+
+
+  ![Image](assets/fr/032.webp)
+
+
+
+  
+
+- **Qubes OS**
+
+
+  
+  基于虚拟化的强隔离架构，安全性极高，但资源需求和学习成本较高。
+
+
+
+  ![Image](assets/fr/033.webp)
+
+
+
+  
+
+- **BlackArch**
+
+
+
+  Arch Linux 的安全测试扩展，面向高级用户。
+
+
+
+  ![Image](assets/fr/034.webp)
+
+
+
+  
+
+- **PureOS**
+
+
+
+  100% 自由软件发行版，注重隐私和去中心化。
+
+
+
+  ![Image](assets/fr/035.webp)
+
+
+
+
+
+  https://planb.academy/tutorials/computer-security/operating-system/pureos-2b6d5fe8-62f8-4a62-b898-4e0530ed408a
+
+- **Raspberry Pi OS**
+  
+  针对树莓派硬件优化，适合教育、实验和轻量服务器用途。
+
+
+
+  ![Image](assets/fr/036.webp)
+
+
+
+
+
+- **Whonix**
+
+
+
+  通过双虚拟机结构强制所有通信经由 Tor，适合高隐私需求用户。
+
+
+
+![Image](assets/fr/037.webp)
+
+
+
+https://planb.academy/tutorials/computer-security/operating-system/whonix-06f9172c-2962-412e-9487-b665d8ca9f59
+
+总体来看，Linux 发行版生态几乎覆盖了所有使用场景。只要明确自己的目标——易用性、性能、安全性、可控性或专业用途——就能找到合适的选择。
+
+在 SCU202 的下一部分，我们将进入 Linux 日常使用体验的核心组成之一：**桌面环境（Desktop Environment）**。
+
+
 # 确保计算机安全
 
 
