@@ -1299,6 +1299,101 @@ https://planb.academy/tutorials/computer-security/operating-system/whonix-06f917
 
 ![Image](assets/fr/052.webp)
 
+
+
+### 桌面环境的典型组成部分
+
+
+
+在 GNU/Linux 系统中，桌面环境并不是单一程序，而是一组相互配合的软件组件，共同构建出完整的图形用户界面层。其主要组成部分包括：
+
+
+
+
+
+- **窗口管理器（Window Manager）**  
+  负责绘制窗口边框，管理窗口的位置、大小、堆叠顺序，以及动画与过渡效果。  
+  常见示例：Mutter（GNOME）、KWin（KDE Plasma）、Xfwm（Xfce）。
+
+
+
+
+
+- **文件管理器（File Manager）**  
+  提供以图形方式浏览、复制、移动和删除文件的能力。  
+  常见示例：Nautilus（GNOME）、Dolphin（KDE）、Thunar（Xfce）。
+
+
+
+
+
+- **系统设置中心（Control Center）**  
+  用于配置系统参数，如外观、壁纸、网络、显示、用户账户和设备设置等，避免频繁使用命令行。
+
+
+
+
+
+- **系统托盘与小组件（Applets）**  
+  位于面板或任务栏中的交互式小程序，用于显示音量、电池状态、网络连接、时钟等信息。
+
+
+
+
+
+- **面板或任务栏（Panel / Dock）**  
+  通常位于屏幕顶部或底部，包含应用启动器、窗口列表、系统状态图标和通知区域。
+
+
+
+
+
+- **会话管理器（Session Manager / Display Manager）**  
+  负责图形登录界面和用户会话的启动。  
+  常见示例：GDM（GNOME）、SDDM（KDE）、LightDM（Xfce）。
+
+
+
+
+
+- **通知管理器（Notification Manager）**  
+  显示系统消息、警告和更新提示。  
+  常见示例：dunst、Plasma-notifier、xfce4-notifyd。
+
+
+
+
+
+- **合成器（Compositor，可选）**  
+  在非集成环境中提供窗口阴影、透明度和动画效果。  
+  示例：Picom、Compton。
+
+
+
+
+
+- **显示服务器（Display Server）**  
+  负责在图形应用、内核和显卡驱动之间传递图形输出与输入事件。  
+  传统上使用 X11，而现代系统正逐步转向 Wayland，使窗口管理器直接承担显示服务器角色。
+
+
+
+所有这些组件都依赖于**图形工具包（Toolkit）**来构建界面元素（按钮、菜单、文本框等）。  
+Linux 桌面环境主要使用两种工具包：
+
+
+
+
+- **GTK**：用于 GNOME、Xfce、Cinnamon、MATE；
+- **Qt**：用于 KDE Plasma、LXQt。
+
+
+
+![Image](assets/fr/054.webp)
+
+
+
+
 # 确保计算机安全
 
 
