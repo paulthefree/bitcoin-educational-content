@@ -1393,6 +1393,111 @@ Linux 桌面环境主要使用两种工具包：
 
 
 
+### 主流 Linux 桌面环境概览
+
+
+
+![Image](assets/fr/053.webp)
+
+
+
+#### GNOME
+
+
+
+GNOME（GNU Network Object Model Environment）创建于 1997 年，是历史最悠久、影响力最大的 Linux 桌面环境之一，基于 **GTK** 工具包构建。
+
+
+
+![Image](assets/fr/051.webp)
+
+
+
+自 GNOME 3 起，该项目对传统桌面范式进行了彻底重构，放弃了经典的“桌面图标 + 任务栏”模式，转而采用以 **活动概览（Activities Overview）** 为核心的工作流。用户通过统一的概览界面管理应用程序、窗口和虚拟桌面，强调专注与简洁。
+
+
+
+在技术实现上，GNOME 使用 **Mutter** 作为窗口管理器，并在 Wayland 环境下同时充当合成器与显示服务器；通过 **XWayland** 保持对传统 X11 应用的兼容性。
+
+
+
+GNOME 的默认组件包括：
+
+
+
+- Nautilus（文件管理器）
+- GNOME Terminal（终端）
+- GNOME Settings（系统设置中心）
+- GNOME Software（应用管理）
+
+
+
+GNOME 以界面统一、设计现代和交互一致性著称，但相较其他桌面环境，其可定制选项较为有限。多数高级自定义需要借助扩展（GNOME Extensions）实现。
+
+
+
+GNOME 是以下发行版的默认桌面环境：
+
+- Fedora Workstation
+- Ubuntu
+- Debian（默认选择）
+- Tails
+- PureOS
+
+
+
+GNOME 适合重视简洁体验、专注工作流，并希望减少界面复杂度的用户。
+
+
+
+#### KDE Plasma
+
+
+
+KDE 项目始于 1996 年，其现代桌面环境 **Plasma** 于 2014 年正式独立命名。KDE Plasma 基于 **Qt 6** 与 **KDE Frameworks** 构建，提供高度模块化且功能完备的桌面生态。
+
+
+
+KDE Plasma 使用 **KWin** 作为窗口管理器，同时也是 Wayland 合成器。它支持窗口模糊、透明效果、平滑动画、GPU 加速以及多点触控，在视觉表现和交互流畅度方面处于领先水平。
+
+
+
+![Image](assets/fr/055.webp)
+
+
+
+Plasma 的一大特色是其**高度集中且图形化的系统设置中心**。几乎所有系统行为都可以通过界面进行调整，包括：
+
+
+
+- 虚拟桌面与工作区
+- 全局快捷键
+- 动画与外观主题
+- 电源管理与性能策略
+- 网络与外设配置
+
+
+
+用户无需手动编辑配置文件即可完成深度定制，这使 KDE Plasma 成为最具可塑性的桌面环境之一。
+
+
+
+KDE Plasma 以功能丰富、视觉精致和高度可定制著称，界面风格对 Windows 用户尤为友好。  
+常见采用 KDE Plasma 的发行版包括：
+
+
+
+- Kubuntu
+- openSUSE Tumbleweed / Leap
+- Fedora KDE Spin
+- Manjaro KDE
+- Whonix（主版本）
+
+
+
+KDE Plasma 适合希望完全掌控桌面行为、偏好传统桌面结构，同时又不愿牺牲现代功能与美观的用户。
+
+
 
 # 确保计算机安全
 
