@@ -2237,9 +2237,14 @@ sudo apt autoremove --purge
 ```
 
 
+
 sudo apt update：刷新软件包索引，获取最新可用版本信息。
 sudo apt full-upgrade：执行完整的升级操作（包括必要的依赖调整和包替换，比普通 upgrade 更彻底）。
 sudo apt autoremove --purge：自动移除不再需要的依赖包，并清理已卸载软件残留的配置文件。
+
+
+
+![Image](assets/fr/064.webp)
 
 
 
@@ -2256,6 +2261,101 @@ sudo reboot
 日常维护中，优先使用 full-upgrade 而非 upgrade，以获得更完整的系统更新
 
 
+
+### 软件源与渠道：了解软件的来源
+
+
+
+Ubuntu 的软件主要通过三种渠道获取，每种渠道的安全性、更新速度、软件新鲜度与稳定性都有显著差异。理解它们的区别有助于你做出更安全、合适的安装决策。
+
+
+
+#### 1. 官方 APT 软件源（最推荐的默认渠道）
+
+
+
+这是 Ubuntu 系统自带、最受信任的软件来源，由 Canonical 及其社区维护，经过严格签名与审核。
+
+
+
+主要组成部分：
+
+
+
+
+- `main`：Canonical 官方维护的自由软件
+- `restricted`：官方提供的非自由（专有）驱动与固件
+- `universe`：社区维护的自由软件（包数量最多，但审核力度低于 main）
+- `multiverse`：社区维护的非自由软件
+
+
+
+启用方式（默认已启用 main/restricted/universe，multiverse 通常需手动开启）：
+
+```bash
+sudo add-apt-repository multiverse
+sudo apt update
+```
+优点：
+
+最高安全性（所有包均由 Ubuntu 签名验证）
+与系统版本深度适配，避免依赖冲突
+自动跟随系统安全更新
+
+缺点：
+
+软件版本相对保守（尤其是 LTS 版）
+某些前沿软件可能需要等待数月才能进入官方源
+
+2. PPA（Personal Package Archives，个人软件包存档）
+由开发者或团队自行维护的第三方源，常用于获取最新版软件（如最新 Firefox、VLC、开发工具等）。
+添加 PPA 示例（以添加 Mozilla 官方 Firefox PPA 为例）：
+Bashsudo add-apt-repository ppa:mozillateam/ppa
+sudo apt update
+常见可靠 PPA 来源：
+
+Mozilla 官方（Firefox）
+LibreOffice 官方
+Lutris / WineHQ / OBS Studio 等游戏/录屏相关项目
+
+风险与注意事项：
+
+PPA 的安全性完全依赖维护者诚信与能力
+可能导致系统不稳定或依赖冲突（尤其是升级系统版本后）
+强烈建议：仅添加你信任且有活跃维护的 PPA，并定期检查 PPA 是否仍在更新
+
+查看已添加的 PPA：
+Bashls /etc/apt/sources.list.d/
+移除不需要的 PPA：
+Bashsudo add-apt-repository --remove ppa:xxx/yyy
+sudo apt update
+3. Snap / Flatpak / AppImage（容器化/自包含格式）
+这些是近年兴起的跨发行版打包方式，软件自带依赖，减少系统污染。
+
+Snap：Canonical 官方推动，默认集成在 Ubuntu 中
+优点：自动更新、版本隔离、易于安装（如 sudo snap install spotify）
+缺点：启动稍慢、占用空间较大、部分主题/字体集成不完美
+推荐场景：需要最新版且不愿折腾依赖的软件（如 VS Code、Discord、Postman）
+
+Flatpak：社区主导，更中立
+安装 Flatpak 支持：Bashsudo apt install flatpak
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+优点：主题集成更好、跨发行版兼容性强
+缺点：首次运行需下载运行时环境（几百 MB）
+
+AppImage：无需安装，直接运行的可执行文件
+优点：极简、无需 root、无残留
+缺点：无自动更新、需手动下载新版
+
+
+总结推荐顺序（由安全到前沿）：
+
+官方 APT 源（最优先）
+可信 PPA（需要最新版时）
+Snap / Flatpak（隔离性好，适合非系统核心软件）
+AppImage（极简需求时）
+
+始终记住：软件来源越接近官方，安全系数越高。在追求前沿功能与安全性之间，找到适合自己的平衡点。
 
 # 确保计算机安全
 
