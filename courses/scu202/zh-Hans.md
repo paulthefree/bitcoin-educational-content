@@ -2292,20 +2292,33 @@ Ubuntu 的软件主要通过三种渠道获取，每种渠道的安全性、更�
 
 启用方式（默认已启用 main/restricted/universe，multiverse 通常需手动开启）：
 
+
+
 ```bash
 sudo add-apt-repository multiverse
 sudo apt update
 ```
+
+
+
 优点：
+
+
 
 最高安全性（所有包均由 Ubuntu 签名验证）
 与系统版本深度适配，避免依赖冲突
 自动跟随系统安全更新
 
+
+
 缺点：
+
+
 
 软件版本相对保守（尤其是 LTS 版）
 某些前沿软件可能需要等待数月才能进入官方源
+
+
 
 2. PPA（Personal Package Archives，个人软件包存档）
 由开发者或团队自行维护的第三方源，常用于获取最新版软件（如最新 Firefox、VLC、开发工具等）。
@@ -2314,28 +2327,43 @@ Bashsudo add-apt-repository ppa:mozillateam/ppa
 sudo apt update
 常见可靠 PPA 来源：
 
+
+
 Mozilla 官方（Firefox）
 LibreOffice 官方
 Lutris / WineHQ / OBS Studio 等游戏/录屏相关项目
 
+
+
 风险与注意事项：
+
+
 
 PPA 的安全性完全依赖维护者诚信与能力
 可能导致系统不稳定或依赖冲突（尤其是升级系统版本后）
 强烈建议：仅添加你信任且有活跃维护的 PPA，并定期检查 PPA 是否仍在更新
+
+
 
 查看已添加的 PPA：
 Bashls /etc/apt/sources.list.d/
 移除不需要的 PPA：
 Bashsudo add-apt-repository --remove ppa:xxx/yyy
 sudo apt update
+
+
+
 3. Snap / Flatpak / AppImage（容器化/自包含格式）
 这些是近年兴起的跨发行版打包方式，软件自带依赖，减少系统污染。
+
+
 
 Snap：Canonical 官方推动，默认集成在 Ubuntu 中
 优点：自动更新、版本隔离、易于安装（如 sudo snap install spotify）
 缺点：启动稍慢、占用空间较大、部分主题/字体集成不完美
 推荐场景：需要最新版且不愿折腾依赖的软件（如 VS Code、Discord、Postman）
+
+
 
 Flatpak：社区主导，更中立
 安装 Flatpak 支持：Bashsudo apt install flatpak
@@ -2343,19 +2371,143 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 优点：主题集成更好、跨发行版兼容性强
 缺点：首次运行需下载运行时环境（几百 MB）
 
+
+
 AppImage：无需安装，直接运行的可执行文件
 优点：极简、无需 root、无残留
 缺点：无自动更新、需手动下载新版
 
 
+
 总结推荐顺序（由安全到前沿）：
+
+
 
 官方 APT 源（最优先）
 可信 PPA（需要最新版时）
 Snap / Flatpak（隔离性好，适合非系统核心软件）
 AppImage（极简需求时）
 
+
+
 始终记住：软件来源越接近官方，安全系数越高。在追求前沿功能与安全性之间，找到适合自己的平衡点。
+
+
+
+### 终端：使用命令行的第一步
+
+
+
+终端（Terminal）是 Linux 系统最强大、最直接的控制界面。掌握基本的命令行操作是实现数字主权、自动化维护和高效故障排除的关键。Ubuntu 默认使用 GNOME Terminal，你也可以安装其他终端如 Terminator、Tilix 或 Alacritty。
+
+
+
+#### 快速打开终端的几种方式
+- 快捷键：**Ctrl + Alt + T**（最常用）
+- 搜索：Super 键（Windows 键）→ 输入 “terminal” → 回车
+- 右键：在桌面或文件夹空白处右键 → “在终端中打开”
+
+
+
+#### 必须掌握的基础命令（前 10 个）
+
+
+
+```bash```
+# 1. 显示当前所在目录
+pwd
+
+
+
+# 2. 列出当前目录内容（推荐加参数）
+ls -la    # 显示隐藏文件、详细信息
+ls -lh    # 以人类可读大小显示文件大小
+
+
+
+# 3. 切换目录
+cd /etc           # 进入 /etc 目录
+cd ~              # 回到用户主目录（等同 cd）
+cd ..             # 返回上一级目录
+cd -              # 返回上一次所在目录
+
+
+
+# 4. 创建目录
+mkdir 新文件夹
+mkdir -p 路径/很深/的/目录   # 递归创建多级目录
+
+
+
+# 5. 创建空文件
+touch 文件名.txt
+
+
+
+# 6. 查看文件内容（适合小文本文件）
+cat 文件名.txt
+less 文件名.txt   # 按 q 退出
+head -n 10 文件名.txt   # 查看前 10 行
+tail -n 20 文件名.txt   # 查看后 20 行
+tail -f /var/log/syslog   # 实时跟踪日志（Ctrl+C 退出）
+
+
+
+# 7. 复制、移动、重命名、删除
+cp 原文件 新文件          # 复制文件
+cp -r 原目录 新目录       # 递归复制目录
+mv 原文件 新位置/新名字   # 移动或重命名
+rm 文件名                 # 删除文件（小心！）
+rm -r 目录名              # 删除目录及其内容
+rm -rf 目录名             # 强制递归删除（极度危险，慎用！）
+
+
+
+# 8. 查看磁盘使用情况
+df -h     # 人类可读格式显示磁盘使用
+du -sh ~  # 查看家目录总占用大小
+
+
+
+# 9. 查看系统资源
+free -h           # 内存使用情况
+top               # 实时进程（按 q 退出）
+htop              # 更友好的 top（需先安装：sudo apt install htop）
+
+
+
+# 10. 获取帮助（最重要！）
+man ls            # 查看 ls 命令的手册（按 q 退出）
+ls --help         # 简短帮助
+tldr ls           # 简洁示例（需先安装：sudo apt install tldr）
+实用小技巧
+
+
+
+Tab 补全：输入前几个字母按 Tab 自动补全命令/文件名/路径（超级省力）
+上下箭头：翻看历史命令
+Ctrl + R：搜索历史命令（输入关键词后回车执行）
+Ctrl + C：中断当前命令
+Ctrl + D：退出当前终端会话
+clear 或 Ctrl + L：清屏
+history：查看命令历史记录
+sudo !!：以 sudo 重新执行上一条命令（非常实用）
+
+
+
+安全提示
+
+
+
+永远不要 盲目复制粘贴未知来源的命令，尤其是包含 sudo rm -rf、dd、mkfs 等破坏性命令的代码。
+在执行 sudo 前，一定先理解每条命令的作用。
+养成习惯：在重要操作前用 echo 预览，例如：Bashecho rm -rf /重要目录/*    # 先看会删什么，再去掉 echo 执行
+
+
+
+掌握终端后，你将拥有对系统近乎完整的控制权，这是从“用户”转向“系统主人”的关键一步。下一节我们将深入探讨软件的安装与管理方式。
+
+
 
 # 确保计算机安全
 
